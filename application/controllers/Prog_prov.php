@@ -48,7 +48,7 @@ class Prog_prov extends CI_Controller {
 		'created_by' => $this->session->userdata('user_id'),
 		'created_by_username' => $this->session->userdata('nama'),
 	    );
-		var_dump($nm_rumahsakit);
+		// var_dump($nm_rumahsakit);
             $this->Prog_prov_model->insert($data);
             $this->session->set_flashdata('message', 'Create Record Success 2');
             redirect(site_url('Prog_prov'));

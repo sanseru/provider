@@ -17,7 +17,7 @@
 <div class="col-xl-3 col-md-6 mb-7">
 </div>
 <!-- Earnings (Monthly) Card Example -->
-<div class="col-xl-5 col-md-6 mb-7">
+<!-- <div class="col-xl-5 col-md-6 mb-7">
   <div class="card border-left-primary shadow h-100 py-2">
     <div class="card-body">
       <div class="row no-gutters align-items-center">
@@ -31,7 +31,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 </div>
 
 <button class="btn mb-4 btn-danger btn-sm" data-toggle="modal" data-target="#myModalAdd">Add New</button>
@@ -53,8 +53,8 @@
             <th>Status</th>
             <th>Provider</th>
             <th>Notes</th>
-            <th>created By</th>
-            <th>Action</th>
+            <!-- <th>created By</th>
+            <th>Action</th> -->
 
             <!-- <th>Start date</th>
             <th>Salary</th> -->
@@ -66,8 +66,8 @@
             <th>Status</th>
             <th>Provider</th>
             <th>Notes</th>
-            <th>created By</th>
-            <th>Action</th>
+            <!-- <th>created By</th>
+            <th>Action</th> -->
 
             <!-- <th>Office</th>
             <th>Age</th>
@@ -90,12 +90,12 @@
 <!-- End of Main Content -->
 
 <!-- Modals -->
-<form id="add-row-form" action="<?php echo site_url('Prog_prov/create_action');?>" method="post">
+<form id="add-row-form" action="<?php echo site_url('Provider/create_action');?>" method="post">
 <div class="modal" id="myModalAdd" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Log Provider</h5>
+        <h5 class="modal-title">Add Provider</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -104,35 +104,62 @@
       <div class="form-row">
     <div class="col">
     <label>Status</label>
-    <select name ="status" class="custom-select custom-select-sm">
-  <option selected><---- PILIH STATUS ----></option>
+    <select name ="status" class="custom-select custom-select-sm" required>
+  <option selected><---- Pilih Status ----></option>
   <?php 
 
-            foreach($groups as $row)
+            foreach($sub as $row)
             { 
-              echo '<option value="'.$row->id_status.'">'.$row->status.'</option>';
+              echo '<option value="'.$row->status_id.'">'.$row->status.'</option>';
             }
             ?>
 </select>
     </div>
 
     <div class="col">
-    <label>Rumah Sakit</label>
-      <select class="custom-select custom-select-sm" name="provider">
-      <option selected>Pilih Provider Yang Di Tuju</option>
+    <label>Provider Category</label>
+      <select class="custom-select custom-select-sm" name="provider_category" required>
+      <option selected>Pilih Provider Category</option>
       <?php 
 
 foreach($provs as $row)
 { 
-  echo '<option value="'.$row->provider_id.'">'.$row->provider_name.'</option>';
+  echo '<option value="'.$row->provider_category_id.'">'.$row->provider_category_code.'</option>';
 }
 ?>
 </select>
     </div>
   </div>
+
+  <div class="form-row">
+    <div class="col">
+    <label>Nama Provider</label>
+
+      <input type="text" name="nm_provider" class="form-control" placeholder="Nama Provider" required>
+    </div>
+    <div class="col">
+    <label>Contact Person</label>
+
+      <input type="text" name="contact" class="form-control" placeholder="Contact Person" required>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="col">
+    <label>Longitude</label>
+
+      <input type="text" name="longitude" class="form-control" placeholder="Longitude" required>
+    </div>
+    <div class="col">
+    <label>Latitude</label>
+
+      <input type="text" name="latitude" class="form-control" placeholder="Latitude" required>
+    </div>
+  </div>
+  
     <div class="form-group">
-    <label>Catatan</label>
-    <textarea type="text" name="catatan" class="form-control" placeholder="Masukan Catatan" required></textarea>
+    <label>Alamat</label>
+    <textarea type="text" name="alamat" class="form-control" placeholder="Masukan Alamat" required></textarea>
     </div>
       
 
@@ -249,12 +276,12 @@ foreach($provs as $row)
                     },
                     processing: true,
                     serverSide: true,
-                    ajax: {"url": "Prog_prov/json", "type": "POST"},
+                    ajax: {"url": "Provider/json", "type": "POST"},
                     columns: [
                         {
-                            "data": "id_log_prov",
+                            "data": "provider_id",
                             "orderable": false
-                        },{"data": "status"},{"data": "nm_rs"},{"data": "notes"},{"data": "created_by_username"},{"data": "view"}
+                        },{"data": "provider_name"},{"data": "status"},{"data": "provider_category_name"}
                     ],
                     "oLanguage": {
                     "sSearch": "Search"

@@ -26,6 +26,9 @@ class Welcome extends CI_Controller {
 	{
 		$data = array(
 			'ambil_info' => $this->Welcome_model->Data(),
+			'jmlprovider' => $this->Welcome_model->getprov(),
+			'provideractive' => $this->Welcome_model->getprov_active(),
+
 		);
 		$this->load->view('elements/header');
 		$this->load->view('main/utama',$data);

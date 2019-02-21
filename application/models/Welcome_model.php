@@ -31,6 +31,33 @@ $this->db->where('id_rumahsakit',$id);
 $result=$this->db->update('tbl_prov_log', $data);
 return $result;
 }
+
+function getprov(){
+  // $id = '2019-02-19';
+  $query = $this->db->query('select*from provider where deleted_status != 1');
+  if($query->num_rows()>0)
+  {
+    return $query->num_rows();
+  }
+  else
+  {
+    return 0;
+  }
+}
+
+function getprov_active(){
+  // $id = '2019-02-19';
+  $query = $this->db->query('select*from provider where deleted_status != 1 AND status_id = 1');
+  if($query->num_rows()>0)
+  {
+    return $query->num_rows();
+  }
+  else
+  {
+    return 0;
+  }
+}
+
 }
     
     
