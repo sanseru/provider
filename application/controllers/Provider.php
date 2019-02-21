@@ -4,7 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Provider extends CI_Controller {
 
 		function __construct(){
-		parent::__construct();		
+        parent::__construct();		
+        if($this->session->userdata("nama")=== NULL){
+            $url=site_url('Auth');
+            redirect($url);
+        }
 		$this->load->model('Provider_model');
 		}
 
@@ -37,7 +41,7 @@ class Provider extends CI_Controller {
             'longitude' => $this->input->post('longitude',TRUE),
             'latitude' => $this->input->post('latitude',TRUE),
             'address' => $this->input->post('alamat',TRUE),
-            'deleted_status' => 0,
+            'deleted_status' => 1,
             'created_time' => $now,
             'created_by' => $this->session->userdata('user_id'),
             // 'created_by_username' => $this->session->userdata('nama'),

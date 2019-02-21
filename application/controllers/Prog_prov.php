@@ -7,6 +7,10 @@ class Prog_prov extends CI_Controller {
     {
 		parent::__construct();
 		// $this->load->library('datatables');
+		if($this->session->userdata("nama")=== NULL){
+            $url=site_url('Auth');
+            redirect($url);
+        }
         $this->load->model('Prog_prov_model');
     }
 
