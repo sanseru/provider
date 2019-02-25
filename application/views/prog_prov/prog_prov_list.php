@@ -149,7 +149,7 @@ foreach($provs as $row)
 <!-- /Modals -->
 
 <!-- Modals -->
-<form id="add-row-form" action="<?php echo site_url('Prog_prov/create_action');?>" method="post">
+<form id="add-row-form" action="<?php echo site_url('Prog_prov/update_action');?>" method="post">
 <div class="modal" id="myModalEdit" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -206,7 +206,37 @@ foreach($provs as $row)
 </form>
 <!-- /Modals -->
 
-    <script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
+
+
+<!-- Modals -->
+<form id="add-row-form" action="<?php echo site_url('Prog_prov/delete');?>" method="post">
+<div class="modal" id="myModalDel" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Log Provider</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="overflow:hidden;">
+ 
+      <input type="hidden" id="id_main" name="id_main" >
+          <strong>Apakah anda Ingin Menghapus ini?
+          </strong>
+
+</div> 
+
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Ya</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+<!-- /Modals -->
+<script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
 
     <!-- Page level plugins -->
     <script src="<?php echo base_url(); ?>assets/vendor/datatables/jquery.dataTables.min.js"></script>
@@ -276,7 +306,7 @@ foreach($provs as $row)
                         var id_stat=$(this).data('stat');
                         var id_rumahsakit=$(this).data('idrs');
                         var notes=$(this).data('notes');
-alert(id_stat);
+// alert(id_stat);
             $('#myModalEdit').modal('show');
                         $('[name="id_main"]').val(code);
                         // $('#status option[value='+id_stat+']').attr("selected", true).siblings().removeAttr("selected");
@@ -284,10 +314,15 @@ alert(id_stat);
                         // $('select[name="id_rumahsakit"] option:selected').val(id_rumahsakit);
                         $("form select[name=provider]").val(id_rumahsakit).change();                        
                         $('[name="catatan"]').val(notes);
-                        $('[name="pic_medsite"]').val(medsit);
-                        $('[name="project_priod_end"]').val(date_end);
+   
 
+      });
 
+                  // get delete Records
+        $('#dataTable').on('click','.delete_record',function(){
+        var code=$(this).data('code');
+        $('#myModalDel').modal('show');
+        $('[name="id_main"]').val(code);
       });
         </script>
 

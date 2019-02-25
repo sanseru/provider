@@ -90,7 +90,7 @@
     <div class="col">
     <label>Status</label>
     <select name ="status" class="custom-select custom-select-sm" required>
-  <option selected><---- Pilih Status ----></option>
+  <option value=""><---- Pilih Status ----></option>
   <?php 
 
             foreach($sub as $row)
@@ -104,7 +104,7 @@
     <div class="col">
     <label>Provider Category</label>
       <select class="custom-select custom-select-sm" name="provider_category" required>
-      <option selected>Pilih Provider Category</option>
+      <option>Pilih Provider Category</option>
       <?php 
 
 foreach($provs as $row)

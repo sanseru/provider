@@ -5,8 +5,8 @@ class Welcome_model extends CI_Model{
    
     $query = $this->db->query('SELECT c1.*
     FROM tbl_prov_log c1 LEFT JOIN tbl_prov_log c2
-     ON (c1.id_rumahsakit = c2.id_rumahsakit AND c1.created_date < c2.created_date)
-    WHERE c2.id_rumahsakit IS NULL AND c1.status_rs = 0 OR c1.status_rs IS NULL');
+     ON (c1.id_rumahsakit = c2.id_rumahsakit AND c1.created_date > c2.created_date)
+    WHERE c2.id_rumahsakit IS NULL AND c1.status_rs = 0 OR c1.status_rs IS NULL group by c1.id_rumahsakit');
     return $query->result();
   }
   

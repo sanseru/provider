@@ -3,7 +3,7 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class Prog_prov_model extends CI_Model{
     public $table = 'tbl_prov_log';
-    public $id = 'id_log_provider';
+    public $id = 'id_log_prov';
     public $order = 'DESC';
 
     function __construct()
@@ -122,5 +122,12 @@ class Prog_prov_model extends CI_Model{
         {
           return 0;
         }
+    }
+
+    function delete_log(){
+        $product_code=$this->input->post('id_main');
+        $this->db->where('id_log_prov',$product_code);
+        $result=$this->db->delete('tbl_prov_log');
+        return $result;
     }
 }
