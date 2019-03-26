@@ -11,12 +11,11 @@ class Welcome_model extends CI_Model{
   }
   
   function history($id){   
-    $this->db->select('tbl_prov_log.id_log_prov, tbl_prov_status.status, tbl_prov_log.nm_rs, provider.provider_name,tbl_prov_log.notes,tbl_prov_log.created_by_username
-    ');
+    $this->db->select('tbl_prov_log.id_log_prov, tbl_prov_status.status, tbl_prov_log.nm_rs, provider.provider_name,tbl_prov_log.notes,tbl_prov_log.created_by_username,tbl_prov_log.created_date');
     $this->db->where('id_rumahsakit', $id);
     $this->db->join('tbl_prov_status', 'tbl_prov_status.id_status = tbl_prov_log.id_stat', 'left');
     $this->db->join('provider', 'provider.provider_id = tbl_prov_log.id_rumahsakit', 'left');
-    $this->db->order_by('id_rumahsakit', "DESC");
+    $this->db->order_by('created_date', "DESC");
     return $this->db->get('tbl_prov_log')->result();
   }
 

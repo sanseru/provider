@@ -13,7 +13,7 @@ class Prog_prov_model extends CI_Model{
 
     // datatables
     function json() {
-        $this->datatables->select('id_log_prov,id_stat,id_rumahsakit,nm_rs,notes,status,created_by_username');
+        $this->datatables->select('id_log_prov,id_stat,id_rumahsakit,nm_rs,notes,status,created_by_username, created_date');
         $this->datatables->from('tbl_prov_log');
 		//add this line for join
 		// $this->datatables->where('department', $this->session->userdata('id_users',TRUE));

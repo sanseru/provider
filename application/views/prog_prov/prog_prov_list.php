@@ -54,6 +54,7 @@
             <th>Provider</th>
             <th>Notes</th>
             <th>created By</th>
+            <th>Created Date</th>
             <th>Action</th>
 
             <!-- <th>Start date</th>
@@ -67,6 +68,7 @@
             <th>Provider</th>
             <th>Notes</th>
             <th>created By</th>
+            <th>Created Date</th>
             <th>Action</th>
 
             <!-- <th>Office</th>
@@ -284,7 +286,7 @@ foreach($provs as $row)
                         {
                             "data": "id_log_prov",
                             "orderable": false
-                        },{"data": "status"},{"data": "nm_rs"},{"data": "notes"},{"data": "created_by_username"},{"data": "view"}
+                        },{"data": "status"},{"data": "nm_rs"},{"data": "notes"},{"data": "created_by_username"}, {"data": "created_date"},{"data": "view"}
                     ],
                     "oLanguage": {
                     "sSearch": "Search"

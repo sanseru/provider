@@ -68,6 +68,7 @@
             <h6 class="collapse-header">Menu:</h6>
             <a class="collapse-item" href="<?php echo site_url('Prog_prov'); ?>">Provider Progress</a>
             <a class="collapse-item" href="<?php echo site_url('Provider'); ?>">Tambah provider</a>
+            <a class="collapse-item" href="<?php echo site_url('Provider_ubah'); ?>">Ubah Status Provider</a>
             <a class="collapse-item" href="<?php echo site_url('Pks_upload'); ?>">Upload PKS</a>
           </div>
         </div>
