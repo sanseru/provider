@@ -19,7 +19,7 @@
           <!-- Content Row -->
           <div class="row">
               <!-- Default Card Example -->
-    <!--           <div class="card mb-12">
+            <!-- <div class="card mb-12">
                 <div class="card-header">
                   Default Card Example
                 </div>
@@ -27,8 +27,6 @@
                   This card uses Bootstrap's default styling with no utility classes added. Global styles are the only things modifying the look and feel of this default card example.
                 </div>
               </div> -->
-
-
             <div class="col-xl-12 col-md-6 mb-4">
               <!-- Default Card Example -->
               <div class="card mb-12">
@@ -36,8 +34,8 @@
                   Mengaktifkan Provider
                 </div>
                 <div class="card-body">
-                  Halaman ini digunakan untuk melakukan pengaktifan provider yang sebelumnya sudha dibuat pada halaman ini. sehingga pada aplikasi lama akan tampil dan lakukan pengeditan.<br><br>
-                  <p>###Jika sudah lakukan Pengatifan silahkan lakukan pengeditan pada aplikasi lama mas.medikapalza.com###</p>
+                  Halaman ini digunakan untuk melakukan pengaktifan provider yang sebelumnya sudah dibuat pada halaman ini. sehingga pada aplikasi lama akan tampil dan lakukan pengeditan.<br><br>
+                  <p>###Jika sudah lakukan Pengaktifan silahkan lakukan pengeditan pada aplikasi lama https://mas.medikapalza.com ###</p>
                 </div>
               </div>
 
@@ -147,7 +145,7 @@
                       <td><?php echo $no++; ?></td>
                       <td><a href="<?php echo site_url('Welcome/history/'.$row->provider_id);?>"><i class="fa fa-pencil"></i> <?php echo $row->provider_name; ?></td>
                       <td><?php echo $row->address; ?></td>
-                      <td><a class="btn btn-success btn-circle btn-xs" href="<?php echo site_url('Provider_ubah/update/'.$row->provider_id);?>" onclick="return confirm('Apakah Yakin Provider Ini sudah Selesai Status Follow Up Nya ?')"> <i class="fas fa-check"></i></a></td>
+                      <td><a class="btn btn-success btn-circle btn-xs" href="<?php echo site_url('Provider_ubah/update/'.$row->provider_id);?>" onclick="return confirm('Apakah Yakin Provider Ini akan di aktifkan kembali ?')"> <i class="fas fa-check"></i></a></td>
 
                     </tr>
                           
