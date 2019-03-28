@@ -40,7 +40,9 @@
 
   <!-- Bootstrap core JavaScript-->
 
-  <script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
+  <!-- <script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
   <script src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
@@ -57,6 +59,25 @@
   <!-- Page level custom scripts -->
   <script src="<?php echo base_url(); ?>assets/js/demo/datatables-demo.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+
+          <script type="text/javascript">
+$(function () {
+  $("#datepicker").datepicker({ 
+        autoclose: true, 
+        format: 'yyyy-mm-dd',
+        todayHighlight: true
+  }).datepicker();
+
+  $("#datepicker2").datepicker({ 
+        autoclose: true,
+        format: 'yyyy-mm-dd', 
+        todayHighlight: true
+  }).datepicker();
+});
+</script>
+
 
 </body>
 
