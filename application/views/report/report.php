@@ -44,7 +44,7 @@
       </div>
       <div class="card-body">
          <div class="table-responsive">
-            <div><?php echo anchor(site_url('Report/excel/'.$date1.'/'.$date2), '<i class="fa fa-file-excel-o" aria-hidden="true"></i> Export Ms Excel', 'class="btn btn-success btn-sm"'); ?></div>
+            <div><?php echo anchor(site_url('Report/excel/'.$date1.'/'.$date2), '<i class="fa fa-file-excel-o" aria-hidden="true"></i> Export Ms Excel', 'class="btn btn-success btn-sm"'); ?></div><br>
             <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
                <thead>
                   <tr>
