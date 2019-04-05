@@ -51,7 +51,7 @@ function excel()
 	 $date1 =  date("Y-m-d H:i:s", strtotime($date4 . '00:00:00'));
 	 $date2 =  date("Y-m-d H:i:s", strtotime($date5 . '23:59:59'));
 
-        $namaFile = "Report.xlsx";
+        $namaFile = "Report Provider.xls";
         $judul = "tbl_client";
         $tablehead = 0;
         $tablebody = 1;
