@@ -51,14 +51,14 @@ function excel()
 	 $date1 =  date("Y-m-d H:i:s", strtotime($date4 . '00:00:00'));
 	 $date2 =  date("Y-m-d H:i:s", strtotime($date5 . '23:59:59'));
 
-        $namaFile = "Report Provider.xls";
+        $namaFile = "Report Provider.xlsx";
         $judul = "tbl_client";
         $tablehead = 0;
         $tablebody = 1;
         $nourut = 1;
         //penulisan header
-        header("Pragma: public");
-        header("Expires: 0");
+        // header("Pragma: public");
+        // header("Expires: 0");
         header("Cache-Control: must-revalidate, post-check=0,pre-check=0");
         header("Content-type: application/vnd-ms-excel");
         header("Content-Type: application/force-download");
